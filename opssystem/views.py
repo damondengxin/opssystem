@@ -79,19 +79,22 @@ def index(request):
 
 
 def login(request):
+    print(request.session.get('username'))
     if request.session.get('username') is not None:
+        print(request.user)
         return HttpResponseRedirect('/', {"user": request.user})
     else:
         username = request.POST.get('username')
         password = request.POST.get('password')
         user = auth.authenticate(username=username, password=password)
+        print(user)
         if user and user.is_active:
             auth.login(request, user)
             request.session['username'] = username
             return HttpResponseRedirect('/uc/user/center/', {"user": request.user})
         else:
             if request.method == "POST":
-                return render(request,'login.html', {"login_error_info": "用户名不错存在，或者密码错误！"})
+                return render(request,'login.html', {"login_error_info": "用户名不存在，或者密码错误！"})
             else:
                 return render(request,'login.html')
 

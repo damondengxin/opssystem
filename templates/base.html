@@ -12,45 +12,13 @@
     <title>运维管理平台</title>
 
 
-    <!-- Bootstrap Core CSS -->
-    <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- MetisMenu CSS -->
-    <link href="/static/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="/static/dist/css/sb-admin-2.css" rel="stylesheet">
-
-    <!-- Morris Charts CSS -->
-    <link href="/static/vendor/morrisjs/morris.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="/static/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <!-- DataTables CSS -->
-    <link href="/static/vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
-
-    <!-- DataTables Responsive CSS -->
-    <link href="/static/vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-      <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-	<!-- Multiselect CSS -->
-   	<link rel="stylesheet" href="/static/dist/css/bootstrap-select.css" type="text/css"/>
+    {% include  'head_js_css.html' %}
 
     <!-- Bootstrap Core JavaScript -->
-
 
     {% block css_file %}
     {% endblock %}
 </head>
-
-
-
 
 
 <body>
@@ -84,7 +52,8 @@
                 <!-- /.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        {{user}} <i class="fa fa-user fa-fw"></i><i class="fa fa-caret-down"></i>
+                        {{user}}
+                        <i class="fa fa-user fa-fw"></i><i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li><a href="/user/center/"><i class="fa fa-user fa-fw"></i> User Profile</a>
@@ -178,50 +147,9 @@
         <!-- /#page-wrapper -->
     </div>
 
-<!-- jQuery -->
-    <script src="/static/vendor/jquery/jquery.min.js"></script>
+ {% include "foot_js.html" %}
 
-    <script src="/static/vendor/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="/static/vendor/metisMenu/metisMenu.min.js"></script>
-
-    <!-- Morris Charts JavaScript -->
-    <script src="/static/vendor/raphael/raphael.min.js"></script>
-    <script src="/static/vendor/morrisjs/morris.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="/static/dist/js/sb-admin-2.js"></script>
-
-    <!-- Flot Charts JavaScript -->
-    <script src="/static/vendor/flot/excanvas.min.js"></script>
-    <script src="/static/vendor/flot/jquery.flot.js"></script>
-    <script src="/static/vendor/flot/jquery.flot.pie.js"></script>
-    <script src="/static/vendor/flot/jquery.flot.resize.js"></script>
-    <script src="/static/vendor/flot/jquery.flot.time.js"></script>
-    <script src="/static/vendor/flot-tooltip/jquery.flot.tooltip.min.js"></script>
-
-    <!-- DataTables JavaScript -->
-    <script src="/static/vendor/datatables/js/jquery.dataTables.min.js"></script>
-    <script src="/static/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
-    <script src="/static/vendor/datatables-responsive/dataTables.responsive.js"></script>
-
-	<!--    弹窗开始样式 -->
-   	<script src="/static/dist/js/xcConfirm.js" type="text/javascript" charset="utf-8"></script>
-   	<link rel="stylesheet" type="text/css" href="/static/dist/css/xcConfirm.css"/>
-   	<!--   csrf -->
-	<script src="/static/js/csrf.js"></script>
-
-    <!-- Multiselect JavaScript -->
-    <script type="text/javascript" src="/static/dist/js/bootstrap-select.js"></script>
-
-    <!-- Echat JavaScript -->
-    <script type="text/javascript" src="/static/js/echarts.js"></script>
-
-    <!-- Datetimepicker -->
-    <link rel="stylesheet" href="/static/dist/css/bootstrap-datetimepicker.min.css" type="text/css"/>
-    <script type="text/javascript" src="/static/js/bootstrap-datetimepicker.js"></script>
-    {% block js_script %}
+  {% block js_script %}
 
     {% endblock %}
 </body>
